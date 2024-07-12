@@ -74,7 +74,8 @@ function foo3(arg) {
 foo3(arr);
 console.log(arr);
 
-ans -->  Output: [1,2,3,3] Variable b is declared and initialized to arg, which is reference to arr. When the value 3 is pushed it gives the the current output.
+ans -->  Output: [1,2,3,3]
+Variable b is declared and initialized to arg, which is reference to arr. When the value 3 is pushed it gives the the current output.
 
 function foo4(arg) {
   let b = arg;
@@ -83,7 +84,8 @@ function foo4(arg) {
 foo4(arr);
 console.log(arr);
 
-ans --> Output: [1,2,3,3] Inside foo4, new variable arg is assigned with value as b. This does not affect the original arr outside foo4.
+ans --> Output: [1,2,3,3]
+Inside foo4, new variable arg is assigned with value as b. This does not affect the original arr outside foo4.
 
 
 
