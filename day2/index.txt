@@ -1,0 +1,90 @@
+# 1: Why are closures useful in JavaScript? Give an example use case.
+
+ans --> Closures are useful in JavaScript because they allow functions to access variables from their parent scope even after the parent function has finished executing.
+This feature enables data encapsulation,creating private variables, and maintaining state in asynchronous operations.
+
+function createBarber() {
+    let haircutsGiven = 0;
+
+    return {
+        giveHaircut: function() {
+            haircutsGiven += 1;
+            console.log(`Total haircuts: ${haircutsGiven}`);
+        },
+        getTotalHaircuts: function() {
+            return haircutsGiven;
+        }
+    };
+}
+
+const barber = createBarber();
+barber.giveHaircut(); // Total haircuts: 1
+barber.giveHaircut(); // Total haircuts: 2
+console.log(`${barber.getTotalHaircuts()}`); // Total haircuts: 2
+console.log(barber.haircutsGiven) // undefined as it is private
+
+# 2: When should you choose to use “let” or “const”?
+
+ans --> 'let' and 'const' are both ways to declare variables in Js. From the above example of haircuts I would use it in some contexts like:
+
+-- Use let when the variable will be changing.
+
+Example: let totalHaircuts = 0;
+Explanation: The variable totalHaircuts will change as more haircuts are given.
+
+-- Use const when the variable will not change.
+
+Example: const hairCutRate = 20;
+Explanation: The variable hairCutRate is fixed and does not change.
+
+#3: Give an example of a common mistake related to hoisting and explain how to fix it.
+
+ans --> Using a variable before it is declared, which leads to unexpected behavior due to hoisting.
+
+console.log(totalHaircuts); // Remove this line to fix it
+let totalHaircuts = 0;
+totalHaircuts += 1;
+console.log(totalHaircuts); // Output: 1
+
+#4: Problems
+
+const arr = [1, 2];
+function foo1(arg) {
+  arg.push(3);
+}
+foo1(arr);
+console.log(arr);
+
+ans --> Output: [1, 2, 3]
+arg.push(3) modifies the original array arr
+
+function foo2(arg) {
+  arg = [1, 2, 3, 4];
+}
+foo2(arr);
+console.log(arr);
+
+ans --> Output: [1, 2, 3]
+foo2 takes arg as parameter, which refers arr. This does not affect the existing original arr hence the result remain unchanged.
+
+function foo3(arg) {
+  let b = arg;
+  b.push(3);
+}
+foo3(arr);
+console.log(arr);
+
+ans -->  Output: [1,2,3,3] Variable b is declared and initialized to arg, which is reference to arr. When the value 3 is pushed it gives the the current output.
+
+function foo4(arg) {
+  let b = arg;
+  b = [1, 2, 3, 4];
+}
+foo4(arr);
+console.log(arr);
+
+ans --> Output: [1,2,3,3] Inside foo4, new variable arg is assigned with value as b. This does not affect the original arr outside foo4.
+
+
+
+
