@@ -22,4 +22,6 @@
 
 - Web pack is a tool that helps us bundle our Js files and required assets like images, css, etc files into output files , helping us manage dependencies and optimize our code for the web.
 
+- Web pack also creates a dependency graph to keep track to keep everything together.
+
 
