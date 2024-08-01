@@ -50,5 +50,26 @@
 - The process React uses to update the actual DOM is called reconciliation.
 
 
+# 10. What is useEffect? What are the different behaviors of useEffect? What is a dependency array?
 
+- `useEffect` is a hook in React that lets you run side effects in your components. Side effects are things like fetching data, updating the DOM directly, or setting up a subscription.
 
+- The useEffect hook in React can behave in different ways:
+
+- `No Dependency Array`: Runs after every render.
+ - `Empty Dependency Array`: Runs only once, after the initial render.
+- `With Dependencies`: Runs after the initial render and whenever any of the specified dependencies change.
+
+- The dependency array in useEffect is a list of values that the effect depends on. If any of these values change, the effect will re-run. If the array is empty, the effect only runs once.
+
+# 11. What is useRef and When to Use It?
+
+- `useRef` is a hook that lets gives a way to persist values across renders without causing a re-render. we can use it to:
+
+- Access and interact with DOM elements.
+-  Store mutable values that don't cause re-renders.
+- Hold references to timers, intervals, or other mutable objects
+
+# 12. How to reuse custom hooks in React?
+
+- To reuse hook logic in React, we canb create a custom  JavaScript function that starts with "use" and uses other hooks inside it. This keeps our code DRY (Don’t Repeat Yourself) and organize it!
