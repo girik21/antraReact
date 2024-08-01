@@ -1,4 +1,4 @@
-# Todo list made with react hooks , json server, uuid
+# Todo list made with react hooks , json server, uuid, axios concurrenltly
 
 To run - `npm start`
 
