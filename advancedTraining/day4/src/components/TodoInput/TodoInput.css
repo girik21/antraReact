@@ -1,0 +1,30 @@
+.mainContainer {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    max-width: 250px;
+}
+
+.inputsContainer{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inputContainer{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.addButton{
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: greenyellow;
+}
+
+.addButton:hover {
+    background-color: #121212;
+}

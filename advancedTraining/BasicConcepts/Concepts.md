@@ -73,3 +73,23 @@
 # 12. How to reuse custom hooks in React?
 
 - To reuse hook logic in React, we canb create a custom  JavaScript function that starts with "use" and uses other hooks inside it. This keeps our code DRY (Don’t Repeat Yourself) and organize it!
+
+# 13 What are some differences between class and functional components?
+
+- Some key differences between class and function components are:
+
+- Class components use ES6 class syntax, while functional components are JavaScript functions.
+- Class components use this.state and this.setState(), while functional components use the useState hook.
+- Class components have access to lifecycle methods like componentDidMount, while functional components use the useEffect hook.
+- Functional components tend to be more concise and easier to read.
+- Class components require binding or arrow functions to handle 'this', while functional components don't have this issue
+
+# 14 Explain what lifecycle is in a simple way. How do you manage it in class and functional components?
+
+- Lifecycle refers to the different stages a component goes through, from creation to deletion.
+- In class components we manage it using methods like `componentDidMount` , `componentDidUpdate`.
+- In functional component we use `useEffect`
+
+# 15 Explain immutability in one sentence.
+
+- Immutability refers to a property or value that cannot be changed after it's created.
