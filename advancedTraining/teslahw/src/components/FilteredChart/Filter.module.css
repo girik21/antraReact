@@ -1,0 +1,27 @@
+.upperContainer {
+    margin-top: 140px;
+}
+
+.outerContainer {
+    text-align: center;
+}
+
+.secondHeader {
+    /* Add styles for the secondHeader if needed */
+    font-style: italic;
+    font-size: 40px;
+}
+
+.tableContainer {
+    flex: 1;
+    border: 2px solid gray;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.tableData{
+    border: 2px solid gray;
+}
+
+

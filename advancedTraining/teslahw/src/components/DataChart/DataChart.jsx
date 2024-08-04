@@ -16,7 +16,7 @@ export default function DataChart() {
         setSalesData(data);
 
         if (data.length > 0) {
-          const headers = Object.keys(data[0]);
+          const headers = Object.keys(data[0]).filter(header => header !== 'id');
           setTableHeaders(headers);
 
           const sums = data.reduce((acc, item) => {
@@ -51,19 +51,24 @@ export default function DataChart() {
             </tr>
           </thead>
           <tbody>
-            {salesData.map((sales, index) => (
-              <tr className='tableRow' key={index}>
-                {tableHeaders.map((header, index) => (
-                  <td className='tableRow' key={index}>{sales[header]}</td>
-                ))}
-              </tr>
-            ))}
             {Object.keys(regionSums).map((region, index) => (
-              <tr key={index}>
-                <td className='tableRow'>{region}</td>
-                <td className='tableRow'>SUM</td>
-                <td className='tableRow'>{regionSums[region]}</td>
-              </tr>
+              //Used react fragment to group multiple rows for each region together
+              <React.Fragment key={index}>
+                <tr>
+                  <td className='tableRow'>{region}</td>
+                  <td className='tableRow tableRowBolder'>SUM</td>
+                  <td className='tableRow'>{regionSums[region]}</td>
+                </tr>
+                {salesData
+                  .filter(sales => sales.region === region)
+                  .map((sales, salesIndex) => (
+                    <tr className='tableRow' key={salesIndex}>
+                      {tableHeaders.map((header, headerIndex) => (
+                        <td className='tableRow' key={headerIndex}>{sales[header]}</td>
+                      ))}
+                    </tr>
+                  ))}
+              </React.Fragment>
             ))}
           </tbody>
         </table>

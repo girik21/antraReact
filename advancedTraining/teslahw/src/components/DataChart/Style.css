@@ -26,3 +26,7 @@
 .tableRow {
     border: 2px solid black;
 }
+
+.tableRowBolder{
+    font-weight: bolder;
+}
