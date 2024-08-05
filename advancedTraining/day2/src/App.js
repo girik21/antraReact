@@ -1,8 +1,11 @@
 import React from 'react'
-import Todo from './components/Todo/Todo'
+import Links from './components/Todo/Links'
+// import Todo from './components/Todo/Todo'
 
 export default function App() {
   return (
-    <><Todo /></>
+    <>
+    <Links />
+    </>
   )
 }

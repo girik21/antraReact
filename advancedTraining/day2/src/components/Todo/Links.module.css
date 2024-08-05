@@ -1,0 +1,25 @@
+.timeContainer{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.mainContainer h1{
+    text-align: center;
+}
+
+.outerButtons{
+    margin-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.outputContainer{
+    justify-content: center;
+    text-align: center;
+}
+
+.output{
+    font-size: 50px;
+}
