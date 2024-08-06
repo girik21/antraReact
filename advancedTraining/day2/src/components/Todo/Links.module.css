@@ -1,25 +1,64 @@
-.timeContainer{
-    display: flex;
-    text-align: center;
+.mainContainer {
     justify-content: center;
-}
-
-.mainContainer h1{
     text-align: center;
 }
 
-.outerButtons{
+.headerText {
+    font-size: 40px;
+}
+
+.clockContainer{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.inputContainer {
+    display: flex;
+    gap: 30px;
+}
+
+.innerText {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.time {
+    max-width: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.buttonStyle{
+    width: 80px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.buttonStyle:hover {
+    background-color: black;
+    color: white;
+}
+
+.buttonContainer .buttonStyle {
     margin-top: 30px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    width: 150px;
+    gap: 50px;
+    margin-left: 20px;
 }
 
 .outputContainer{
-    justify-content: center;
     text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 .output{
-    font-size: 50px;
+    font-size: 60px;
+    width: 100%;
 }
