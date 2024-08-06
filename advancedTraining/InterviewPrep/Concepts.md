@@ -65,6 +65,97 @@ Some ways we can trigger a re-render are:
 
 - This minimizes direct DOM manipulations, which are costly in terms of performance.
 
+# Can you explain the useMemo and useCallback hooks and provide examples of when you might use them?
+
+- useMemo is used to memoize computations that has been executed already. It takes a function and a dependency array and only re-computes if one of the memoized dependencies has changed.
+
+```
+
+import React, { useMemo } from 'react';
+
+function ListComponent({ items }) {
+  const sortedList = useMemo(() => {
+    // Save the sorting operation
+    return items.sort((a, b) => a.value - b.value);
+  }, [items]);
+
+  return (
+    <ul>
+      {sortedList.map(item => (
+        <li key={item.id}>{item.value}</li>
+      ))}
+    </ul>
+  );
+} ```
+
+
+- useCallback is used to memoize callback functions. It's particularly useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
+
+import React, { useState, useCallback } from 'react';
+
+import ExpensiveComponent from './ExpensiveComponent';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(prevCount => prevCount + 1);
+  }, []);
+
+  return (
+    <div>
+      <ExpensiveComponent onClick={handleClick} />
+      <p>Count: {count}</p>
+    </div>
+  );
+}
+
+```
+
+# Explain the concept of Higher-Order Components (HOCs) and provide an example use case.
+
+
+- Higher-Order Components (HOCs) are functions that take a component and return a new one with extra features. They're like wrappers for your components.
+
+` const withLoading = (Component) => (props) =>
+  props.loading ? <LoadingSpinner /> : <Component {...props} /> `
+  
+
+# Discuss the differences between React's class components and functional components. Which one do you prefer and why?
+
+React class components vs functional components:
+
+Key differences:
+
+- Syntax: Class components use ES6 classes, functional components are just functions.
+- State management: Class components use this.state, functional components use useState hook.
+- Lifecycle methods: Class components have lifecycle methods, functional components use useEffect hook.
+'this' keyword: Used in class components, not needed in functional components.
+
+Preference: Functional components.
+Reasons:
+
+- Simpler syntax and easier to read
+- Hooks provide a more flexible way to use state and side effects
+- Better performance in some cases
+- Align with modern JavaScript practices
+
+
+# Ensuring code maintainability and scalability:
+
+
+- Write clean, well-documented code
+- Use consistent naming conventions
+- Break down complex components into smaller, reusable ones
+- Implement proper state management (e.g., Redux for large apps)
+- Write unit tests for critical parts of the application
+-Use type checking (TypeScript or PropTypes)
+- Follow SOLID principles
+- Regularly refactor and optimize code
+- Use version control effectively
+- Conduct code reviews
+
+
 
 
 
