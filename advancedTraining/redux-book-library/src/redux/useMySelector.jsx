@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import store from '.';
+import store from './index';
 
 
 export default function useMySelector(selectorFn) {
