@@ -1,9 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import useMySelector from '../redux/useMySelector';
 import styles from './Books.module.css';
 
 export default function BookLibrary() {
-    const books = useSelector(state => state);
+    const books = useMySelector(state => state);
     const dispatch = useDispatch();
 
     const rentedStatus = (id) => {
