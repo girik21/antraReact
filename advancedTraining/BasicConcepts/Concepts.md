@@ -93,3 +93,55 @@
 # 15 Explain immutability in one sentence.
 
 - Immutability refers to a property or value that cannot be changed after it's created.
+
+
+# 16 What is FLUX?
+
+- Flux is a pattern for how data flows through a React application. The major idea about flux is that there can only be a single source of truth (store) and can be updated by triggering actions.
+
+# 17 What is Redux? How do you use it with React components?
+
+- Redux is a JS library that helps us write consistent and maintainable global state management.
+
+- ` React-Redux ` helps us integrate Redux with our React Components. 
+
+- To use it with React components we need to:
+
+- Install redux using any package manager
+- Create a redux store by passing a reducer function. The store will help us maintain the application state.
+- We wrap the app with the `Provider` component and pass the store as a prop.
+- Use Redux state and actions.
+
+    - `useSelector`: Allows us to extract data from the redux store state.
+    - `useDispatch`: Allows us to to access the `dispatch()` function so we can dispatch actionsto the store
+
+- We define actions to help us handle different actions.
+
+# 18. What is a reducer?
+
+- A reducer is a function that receives the current state and an action object, then it decides on how to update the state if necessary and return the new state.
+
+`(state, action) => newState`
+
+# 19. How do you choose between ContextAPI and Redux for global state management?
+
+- Both Redux and Context API provide a way to manage the state of our application in a predictable way.
+- They also both provide a global state that can be accessed by any component in the component tree.
+
+Some reasons to choose between ContextApi and Redux are:
+
+## Complexity:
+ - If the app has a lot of state to be managed then we can choose `Redux` as it helps us make app easy to debug using its given debugging UI and can help improve performance more.
+
+## Simplicity:
+- Context API is a good choice if we have a small to medium-sized application with simple state management needs. It can be simpler to use than Redux and can make passing data between components easier without having to manually pass props down at every level.
+
+- At the end of the day, choice between the two depends on the specific needs of the application.
+
+# 20 What is redux thunk and why do you want to use it?
+
+- Redux Thunk is middleware that allows us to return functions, rather than just actions, within Redux.
+
+- One of the main use cases for this middleware is for handling actions that might  be asynchronous, for example, using axios to send a GET request.
+
+- Redux Thunk allows us to dispatch those actions asynchronously and resolve each promise that gets returned.
