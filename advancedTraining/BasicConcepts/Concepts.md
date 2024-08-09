@@ -97,13 +97,13 @@
 
 # 16 What is FLUX?
 
-- Flux is a pattern for how data flows through a React application. The major idea about flux is that there can only be a single source of truth (store) and can be updated by triggering actions.
+- Flux is a uni-directional architrecture pattern for how data flows through a React application. The major idea about flux is that there can only be a single source of truth (store) and can be updated by triggering actions.
 
 # 17 What is Redux? How do you use it with React components?
 
-- Redux is a JS library that helps us write consistent and maintainable global state management.
+- Redux is a JS library that helps us write consistent and maintainable global state management. It follows the principle of Flux.
 
-- ` React-Redux ` helps us integrate Redux with our React Components. 
+- ` React-Redux ` helps us integrate Redux with our React Components.
 
 - To use it with React components we need to:
 
@@ -119,7 +119,7 @@
 
 # 18. What is a reducer?
 
-- A reducer is a function that receives the current state and an action object, then it decides on how to update the state if necessary and return the new state.
+- A reducer is a pure function that updates immutable state by returning the new state. It receives the current state and an action object, then it decides on how to update the state if necessary and return the new state.
 
 `(state, action) => newState`
 
@@ -143,5 +143,7 @@ Some reasons to choose between ContextApi and Redux are:
 - Redux Thunk is middleware that allows us to return functions, rather than just actions, within Redux.
 
 - One of the main use cases for this middleware is for handling actions that might  be asynchronous, for example, using axios to send a GET request.
+
+- Thunk middleware functions do not need to be pure , so they can handle side effect like CRUD operations with the help of Apis.
 
 - Redux Thunk allows us to dispatch those actions asynchronously and resolve each promise that gets returned.
